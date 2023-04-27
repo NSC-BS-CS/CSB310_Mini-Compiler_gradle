@@ -121,7 +121,17 @@ public class Lexer {
     }
 
     char getNextChar() {
-        // get next character
+        this.pos++;
+        this.position++;
+        if (this.position >= this.s.length()) {
+            this.chr = '\u0000';
+            return this.chr;
+        }
+        this.chr = this.s.charAt(this.position);
+        if (this.chr == '\n') {
+            this.line++;
+            this.pos = 0;
+        }
         return this.chr;
     }
 
@@ -153,7 +163,7 @@ public class Lexer {
         if (1==1) {
             try {
 
-                File f = new File("src/main/resources/hello.t");
+                File f = new File("src/main/resources/count.c");
                 Scanner s = new Scanner(f);
                 String source = " ";
                 String result = " ";
