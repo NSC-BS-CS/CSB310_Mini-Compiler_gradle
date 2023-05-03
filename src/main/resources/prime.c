@@ -1,6 +1,6 @@
 /*
- Simple prime number generator
- */
+Simple prime number generator
+*/
 count = 1;
 n = 1;
 limit = 100;
